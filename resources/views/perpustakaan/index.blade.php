@@ -1,10 +1,10 @@
 @extends('layout')
-<a href=""></a>
+
 @section ('content')
     <h1>Perpustakaan</h1>
-    <a href="{{ route('perpustakaan.create)}}">Create New Activity</a>
+    <a href="{{ route('perpustakaan.create')}}">Create New Activity</a>
 
-    @if ($message = Session::get('succes'))
+    @if ($message = Session::get('success'))
         <div>{{ $message }}</div>
     @endif
 
@@ -18,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($perpustakaans as $perpustakaan)
+            @foreach($perpustakaan as $perpustakaan)
                 <tr>
                     <td> {{$perpustakaan->id}} </td>
                     <td> {{$perpustakaan->image}} </td>

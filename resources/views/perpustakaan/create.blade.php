@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form action="{{ route('perpustakaan.store', $perpustakaan->id)}}" method="POST">
+    <form action="{{ route('perpustakaan.store')}}" method="POST">
         @csrf
 
         <label>Image</label>
@@ -29,7 +29,6 @@
             name="title"
             id="title"
             class="form-control @error('title') is-invalid @enderror"
-            value="{{ old('title)}}"
             placeholder="Tolong Isi Judul Buku">
 
         <label for="title" class="form-label">Status</label>

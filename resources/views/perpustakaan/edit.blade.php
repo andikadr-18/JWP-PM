@@ -29,7 +29,7 @@
             name="title"
             id="title"
             class="form-control @error('title') is-invalid @enderror"
-            value="{{ old('title', $perpustakaan->title)}}">
+            value="{{ old('title')}}">
 
         <label for="title" class="form-label">Status</label>
         <select name="status" class="form-select">
