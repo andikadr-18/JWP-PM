@@ -105,7 +105,7 @@ class PerpustakaanController extends Controller
 
             $perpustakaan->update([
                 'title' => $validateData['title'],
-                'status' => $validateData['content'],
+                'status' => $validateData['status'],
                 'image' => $imageName,
             ]);
             return redirect()->route('perpustakaan.index')

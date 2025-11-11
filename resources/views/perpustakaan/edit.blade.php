@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form action="{{ route('perpustakaan.update', $perpustakaan->id)}}" method="POST">
+    <form action="{{ route('perpustakaan.update', $perpustakaan->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <label>Image</label>
@@ -29,13 +29,15 @@
             name="title"
             id="title"
             class="form-control @error('title') is-invalid @enderror"
-            value="{{ old('title')}}">
+            value="{{ old('title', $perpustakaan->title)}}">
 
         <label for="title" class="form-label">Status</label>
         <select name="status" class="form-select">
             <option value="">--STATUS--</option>
-            <option value="TERSEDIA">TERSEDIA</option>
-            <option value="DIPINJAM">DIPINJAM</option>
+            <option value="TERSEDIA">Tersedia</option>
+            <option value="DIPINJAM">Dipinjam</option>
         </select>
+        <button type="submit">Submit</button>
     </form>
+    <a href="{{ route ('perpustakaan.index')}}">Back</a>
 @endsection

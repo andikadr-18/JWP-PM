@@ -8,20 +8,29 @@
         <div>{{ $message }}</div>
     @endif
 
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>id</th>
                 <th>Image</th>
                 <th>Title</th>
                 <th>Status</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach($perpustakaan as $perpustakaan)
                 <tr>
                     <td> {{$perpustakaan->id}} </td>
-                    <td> {{$perpustakaan->image}} </td>
+                    <td>
+                @if ($perpustakaan->image)
+                    <img src="{{ asset('storage/images/' . $perpustakaan->image) }}" alt="image"
+                    style="max-width: 150px; max-height: 150px;"/>
+                @else
+                    No Image
+                @endif
+
+                </td>
                     <td> {{$perpustakaan->title}} </td>
                     <td> {{$perpustakaan->status}}</td>
                     <td>

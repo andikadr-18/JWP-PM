@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form action="{{ route('perpustakaan.store')}}" method="POST">
+    <form action="{{ route('perpustakaan.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <label>Image</label>
@@ -34,9 +34,10 @@
         <label for="title" class="form-label">Status</label>
         <select name="status" class="form-select">
             <option value="">--STATUS--</option>
-            <option value="TERSEDIA">TERSEDIA</option>
-            <option value="DIPINJAM">DIPINJAM</option>
+            <option value="TERSEDIA">Tersedia</option>
+            <option value="DIPINJAM">Dipinjam</option>
         </select>
-            <button type="submit">Submit</button>
+        <button type="submit">Submit</button>
     </form>
+    <a href="{{ route ('perpustakaan.index')}}">Back</a>
 @endsection
